@@ -1,14 +1,15 @@
 import React from 'react';
-import Movies from './Movies';  // Importe o componente Movies
+import Header from './components/Header';
+import Movies from './components/Movies';
+import './styles.css';
 
-const App = () => {
+function App() {
   return (
     <div>
-      <h1>Bem-vindo ao meu projeto de filmes e séries!</h1>
-      <Movies />  {/* Coloque o componente Movies aqui */}
+      <Header />
+      <Movies />
     </div>
   );
-};
+}
 
 export default App;
-

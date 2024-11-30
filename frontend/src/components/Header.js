@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Header = () => {
-  const [search, setSearch] = useState("");
+const Header = ({ onSearch, setCategory }) => {
+  const [query, setQuery] = useState("");
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log(`Pesquisando por: ${search}`);
+  const handleSearch = () => {
+    onSearch(query);
   };
 
   return (
     <header className="header">
-      <div className="logo">
-        <h1>Netflix Clone</h1>
-      </div>
-      <form onSubmit={handleSearch} className="search-bar">
-        <input
-          type="text"
-          placeholder="Pesquisar..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button type="submit">Buscar</button>
-      </form>
+      <h1>Plataforma de Streaming</h1>
+      <input
+        type="text"
+        placeholder="Buscar filmes ou séries..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button onClick={handleSearch}>Buscar</button>
+
+      <nav>
+        <button onClick={() => setCategory('movies')}>Filmes</button>
+        <button onClick={() => setCategory('tv')}>Séries</button>
+      </nav>
     </header>
   );
 };

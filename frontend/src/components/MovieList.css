@@ -1,0 +1,23 @@
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .movie-card {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .movie-card h3 {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
